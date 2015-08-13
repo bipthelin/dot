@@ -91,9 +91,9 @@ nnoremap <silent> n n:call HLNext(0.4)<cr>
 nnoremap <silent> N N:call HLNext(0.4)<cr>
 
 """_* File mappings ====================================================
-au BufNewFile,BufRead *.hs  setlocal noet ts=2 sw=2 sts=2
-au BufNewFile,BufRead *.erl setlocal noet ts=4 sw=4 sts=4
-au BufNewFile,BufRead *.hrl setlocal noet ts=4 sw=4 sts=4
+au BufNewFile,BufRead *.hs  setlocal ts=2 sw=2 sts=2
+au BufNewFile,BufRead *.erl setlocal ts=4 sw=4 sts=4
+au BufNewFile,BufRead *.hrl setlocal ts=4 sw=4 sts=4
 au BufNewFile,BufRead *.md  setlocal noet ts=4 sw=4
 
 """_* Functions ========================================================

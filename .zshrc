@@ -14,4 +14,7 @@ plugins=(git osx pass)
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:$HOME/.bin:$HOME/Library/Haskell/bin:$PATH"
 source $ZSH/oh-my-zsh.sh
 
+###_* Aliases ==========================================================
+alias gs="git status -s"
+
 ### eof
