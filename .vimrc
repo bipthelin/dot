@@ -10,8 +10,6 @@ execute pathogen#infect()
 """_ * GUI -------------------------------------------------------------
 syntax      enable
 set         background=dark
-let         g:solarized_termtrans = 1
-let         g:solarized_visibility =  "low"
 colorscheme solarized
 set         hlsearch
 set         list listchars=tab:▸\
@@ -53,6 +51,8 @@ set nowb
 set wildignore+=*.beam,*.dump,*~,*.o,.git,*.png,*.jpg,*.gif,.DS_Store,.eunit,deps,rel
 
 """_ * Mappings --------------------------------------------------------
+let mapleader=" "
+
 " easier buffer navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -60,8 +60,7 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 map <leader>w <C-w>v<C-w>li
 map <leader>n :bn<CR>
-map <leader>t :TagbarOpenAutoClose<CR>
-map <leader>m :NERDTreeToggle<CR>
+map <leader>m :Magit<CR>
 
 " Disable "normal" arrow bindings
 map <Up>     <nop>
