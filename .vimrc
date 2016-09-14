@@ -16,16 +16,7 @@ set         list listchars=tab:▸\
 highlight   SpecialKey ctermfg=red
 set         colorcolumn=80
 
-if has('gui_running')
-    "set background=light
-    set guifont=Inconsolata\ for\ Powerline:h14
-    let g:airline_powerline_fonts = 1
-    set go-=T
-    set go-=l
-    set go-=L
-    set go-=r
-    set go-=R
-endif
+let g:airline_powerline_fonts = 1
 
 """_ * Primitives ------------------------------------------------------
 filetype plugin indent on
