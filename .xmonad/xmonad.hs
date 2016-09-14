@@ -6,6 +6,7 @@
 import           XMonad
 import           XMonad.Hooks.DynamicLog
 import           XMonad.Hooks.ManageDocks
+import           XMonad.Hooks.SetWMName
 import           XMonad.Util.EZConfig     (additionalKeys)
 import           XMonad.Util.Run          (spawnPipe)
 
@@ -18,10 +19,11 @@ main = do
   xmonad $ defaultConfig
     { manageHook      = manageDocks <+> manageHook defaultConfig
     , layoutHook      = avoidStruts  $  layoutHook defaultConfig
+    , startupHook     = setWMName "LG3D"
     , handleEventHook = mconcat
     [ docksEventHook
     , handleEventHook defaultConfig ]
-    , logHook = dynamicLogWithPP xmobarPP
+    , logHook     = dynamicLogWithPP xmobarPP
       { ppOutput = hPutStrLn xmproc
       , ppTitle  = xmobarColor "green" "" . shorten 50
       }

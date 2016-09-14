@@ -12,7 +12,7 @@ DISABLE_LS_COLORS="true"
 plugins=(git osx pass)
 
 export GOPATH="$HOME/Documents/goroot"
-export PATH="$HOME/.cabal/bin:$PATH"
+export PATH="$HOME/.cabal/bin:$HOME/.bin:$PATH"
 source $ZSH/oh-my-zsh.sh
 
 # The next line updates PATH for the Google Cloud SDK.
