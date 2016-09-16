@@ -66,12 +66,12 @@ imap <Right> <nop>
 inore jj     <Esc>
 
 " Mapping to move lines
-nnoremap <D-j> :m      .+1<CR>==
-nnoremap <D-k> :m      .-2<CR>==
-inoremap <D-j> <Esc>:m .+1<CR>==gi
-inoremap <D-k> <Esc>:m .-2<CR>==gi
-vnoremap <D-j> :m      '>+1<CR>gv=gv
-vnoremap <D-k> :m      '<-2<CR>gv=gv
+nnoremap <A-j> :m      .+1<CR>==
+nnoremap <A-k> :m      .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m      '>+1<CR>gv=gv
+vnoremap <A-k> :m      '<-2<CR>gv=gv
 
 " tripple escape closes buffer
 map  <esc><esc><esc> :bd<cr>
@@ -87,6 +87,15 @@ au BufNewFile,BufRead *.hrl setlocal ts=4 sw=4 sts=4
 au BufNewFile,BufRead *.md  setlocal noet ts=4 sw=4
 
 """_* Functions ========================================================
+let c='a'
+while c <= 'z'
+  exec "set <A-".c.">=\e".c
+  exec "imap \e".c." <A-".c.">"
+  let c = nr2char(1+char2nr(c))
+endw
+
+set ttimeout ttimeoutlen=50
+
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
     \ ['Darkblue',    'SeaGreen3'],
