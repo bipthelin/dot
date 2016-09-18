@@ -43,10 +43,15 @@ main = do
     , ((0, 0x1008ff03), spawn "xcalib -co 90 -a")
     , ((0, 0x1008ff05), spawn "kbdlight up")
     , ((0, 0x1008ff06), spawn "kbdlight down")
-    , ((0, 0x1008ff12), toggleMuteChannels ["Master", "Headphone", "Speaker", "Bass Speaker"] >> return ())
-    , ((0, 0x1008ff13), raiseVolume 4 >> return ())
-    , ((0, 0x1008ff11), lowerVolume 4 >> return ())
+    , ((0, 0x1008ff12), toggleMuteChannels
+        ["Master", "Headphone", "Speaker", "Bass Speaker"] >> return ())
+    , ((0, 0x1008ff13), unMute >> raiseVolume 4 >> return ())
+    , ((0, 0x1008ff11), unMute >> lowerVolume 4 >> return ())
     ]
+
+unMute :: X ()
+unMute =
+  setMuteChannels ["Master", "Headphone", "Speaker", "Bass Speaker"] False
 
 --_* Editor ===========================================================
 -- Local Variables:
