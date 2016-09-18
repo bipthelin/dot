@@ -45,8 +45,8 @@ main = do
     , ((0, 0x1008ff06), spawn "kbdlight down")
     , ((0, 0x1008ff12), toggleMuteChannels
         ["Master", "Headphone", "Speaker", "Bass Speaker"] >> return ())
-    , ((0, 0x1008ff13), unMute >> raiseVolume 4 >> return ())
-    , ((0, 0x1008ff11), unMute >> lowerVolume 4 >> return ())
+    , ((0, 0x1008ff13), unMute >> raiseVolume 11 >> return ())
+    , ((0, 0x1008ff11), unMute >> lowerVolume 11 >> return ())
     ]
 
 unMute :: X ()
