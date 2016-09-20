@@ -10,7 +10,7 @@ execute pathogen#infect()
 """_ * GUI -------------------------------------------------------------
 syntax      enable
 set         background=dark
-colorscheme solarized
+colorscheme unicon
 set         hlsearch
 set         list listchars=tab:▸\
 highlight   SpecialKey ctermfg=red
