@@ -12,7 +12,7 @@ DISABLE_LS_COLORS="true"
 plugins=(git osx pass)
 
 export GOPATH="$HOME/Documents/goroot"
-export PATH="$HOME/.cabal/bin:$HOME/.bin:$HOME/.bin/elixir/bin:$PATH"
+export PATH="/usr/local/go/bin:$HOME/.cabal/bin:$HOME/.bin:$HOME/.bin/elixir/bin:$PATH"
 source $ZSH/oh-my-zsh.sh
 source $HOME/.bin/erlang/18.3/activate
 
