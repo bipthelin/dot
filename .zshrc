@@ -14,7 +14,7 @@ plugins=(git osx pass)
 export GOPATH="$HOME/Documents/goroot"
 export PATH="/usr/local/go/bin:$HOME/.cabal/bin:$HOME/.bin:$HOME/.bin/elixir/bin:$HOME/.cache/rebar3/bin:$PATH"
 source $ZSH/oh-my-zsh.sh
-source $HOME/.bin/erlang/18.3/activate
+source $HOME/.bin/erlang/19.2/activate
 
 # The next line updates PATH for the Google Cloud SDK.
 #source "$HOME/google-cloud-sdk/path.zsh.inc"
