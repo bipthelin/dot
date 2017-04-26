@@ -3,7 +3,6 @@
 ###_* Basics ===========================================================
 export ZSH=$HOME/.oh-my-zsh
 
-ulimit -n 65536 65536
 ulimit -f unlimited
 ulimit -u 2048
 
