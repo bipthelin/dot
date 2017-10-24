@@ -5,12 +5,14 @@
 --_* Imports ==========================================================
 import           XMonad
 import           XMonad.Actions.Volume
-import           XMonad.Config.Gnome      (gnomeConfig)
+import           XMonad.Config.Gnome        (gnomeConfig)
 import           XMonad.Hooks.DynamicLog
 import           XMonad.Hooks.ManageDocks
+import           XMonad.Hooks.ManageHelpers (doCenterFloat, doFullFloat,
+                                             isDialog, isFullscreen)
 import           XMonad.Hooks.SetWMName
-import           XMonad.Util.EZConfig     (additionalKeys)
-import           XMonad.Util.Run          (spawnPipe)
+import           XMonad.Util.EZConfig       (additionalKeys)
+import           XMonad.Util.Run            (spawnPipe)
 
 import           System.IO
 
@@ -23,7 +25,7 @@ myFocusedBorderColor = "#93c91d"
 main = do
   xmproc <- spawnPipe "xmobar"
   xmonad $ defaultConfig
-    { manageHook         = manageDocks <+> manageHook defaultConfig
+    { manageHook         = ( isFullscreen --> doFullFloat ) <+> manageDocks <+> manageHook defaultConfig
     , layoutHook         = avoidStruts  $  layoutHook defaultConfig
     , startupHook        = setWMName "LG3D"
     , modMask            = mod4Mask     -- Rebind Mod to the Cmd key
