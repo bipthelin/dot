@@ -9,15 +9,14 @@ execute pathogen#infect()
 
 """_ * GUI -------------------------------------------------------------
 syntax      enable
-colorscheme space-vim-dark
+colorscheme gruvbox
+set         background=dark
 hi          Comment cterm=italic
 set         hlsearch
 set         list listchars=tab:▸\
 highlight   SpecialKey ctermfg=red
 set         colorcolumn=80
 highlight   ColorColumn ctermbg=0*
-
-let g:airline_powerline_fonts = 1
 
 """_ * Primitives ------------------------------------------------------
 filetype plugin indent on
@@ -41,6 +40,8 @@ set nowb
 
 " add beams etc to useless file list
 set wildignore+=*.beam,*.dump,*~,*.o,.git,*.png,*.jpg,*.gif,.DS_Store,.eunit,deps,rel
+
+let g:airline_powerline_fonts = 1
 
 """_ * Mappings --------------------------------------------------------
 let mapleader=" "
