@@ -16,7 +16,7 @@ set         hlsearch
 set         list listchars=tab:▸\
 highlight   SpecialKey ctermfg=red
 set         colorcolumn=80
-highlight   ColorColumn ctermbg=0*
+highlight   ColorColumn ctermbg=8
 
 """_ * Primitives ------------------------------------------------------
 filetype plugin indent on
