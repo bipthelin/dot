@@ -5,7 +5,6 @@
 --_* Imports ==========================================================
 import           XMonad
 import           XMonad.Actions.Volume
-import           XMonad.Config.Gnome        (gnomeConfig)
 import           XMonad.Hooks.DynamicLog
 import           XMonad.Hooks.ManageDocks
 import           XMonad.Hooks.ManageHelpers (doCenterFloat, doFullFloat,
