@@ -12,6 +12,7 @@ plugins=(git autojump history-substring-search pass)
 
 export GOPATH="$HOME/Documents/goroot"
 export PATH="/usr/local/go/bin:$HOME/.cabal/bin:$HOME/.bin:$HOME/.bin/elixir/bin:$HOME/.cache/rebar3/bin:$PATH"
+export ANSIBLE_CONFIG=/home/bip/Documents/Code/infrastructure_ng/se/ansible.cfg
 source $ZSH/oh-my-zsh.sh
 source $HOME/.bin/erlang/20.0/activate
 
@@ -19,6 +20,9 @@ source $HOME/.bin/erlang/20.0/activate
 export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=bold
 export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND=none
 setopt HIST_FIND_NO_DUPS
+
+# Enabled extended glob patterns
+setopt extendedglob
 
 # The next line updates PATH for the Google Cloud SDK.
 #source "$HOME/google-cloud-sdk/path.zsh.inc"
