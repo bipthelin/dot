@@ -14,7 +14,7 @@ export GOPATH="$HOME/Documents/goroot"
 export PATH="/usr/local/go/bin:$HOME/.cabal/bin:$HOME/.bin:$HOME/.bin/elixir/bin:$HOME/.cache/rebar3/bin:$PATH"
 export ANSIBLE_CONFIG=/home/bip/Documents/Code/infrastructure_ng/se/ansible.cfg
 source $ZSH/oh-my-zsh.sh
-source $HOME/.bin/erlang/20.0/activate
+source $HOME/.bin/erlang/21.2/activate
 
 # history-substring-search options
 export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=bold
