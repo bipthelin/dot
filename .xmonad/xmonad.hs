@@ -23,17 +23,17 @@ myFocusedBorderColor = "#93c91d"
 --_ * API -------------------------------------------------------------
 main = do
   xmproc <- spawnPipe "xmobar"
-  xmonad $ defaultConfig
-    { manageHook         = ( isFullscreen --> doFullFloat ) <+> manageDocks <+> manageHook defaultConfig
-    , layoutHook         = avoidStruts  $  layoutHook defaultConfig
-    , startupHook        = setWMName "LG3D"
+  xmonad $ def
+    { manageHook         = ( isFullscreen --> doFullFloat ) <+> manageDocks <+> manageHook def
+    , layoutHook         = avoidStruts  $  layoutHook def
+    , startupHook        = setWMName "LG3D" <+> spawn "autorandr --change"
     , modMask            = mod4Mask     -- Rebind Mod to the Cmd key
     , normalBorderColor  = myNormalBorderColor
     , focusedBorderColor = myFocusedBorderColor
     , borderWidth        = 2
     , handleEventHook    = mconcat
       [ docksEventHook
-      , handleEventHook defaultConfig ]
+      , handleEventHook def ]
     , logHook            = dynamicLogWithPP xmobarPP
       { ppOutput = hPutStrLn xmproc
       , ppTitle  = xmobarColor "green" "" . shorten 50
@@ -46,13 +46,9 @@ main = do
     , ((0, 0x1008ff06), spawn "kbdlight down")
     , ((0, 0x1008ff12), toggleMuteChannels
         ["Master", "Headphone", "Speaker", "Bass Speaker"] >> return ())
-    , ((0, 0x1008ff13), unMute >> raiseVolume 11 >> return ())
-    , ((0, 0x1008ff11), unMute >> lowerVolume 11 >> return ())
+    , ((0, 0x1008ff13), raiseVolume 11 >> return ())
+    , ((0, 0x1008ff11), lowerVolume 11 >> return ())
     ]
-
-unMute :: X ()
-unMute =
-  setMuteChannels ["Master", "Headphone", "Speaker", "Bass Speaker"] False
 
 --_* Editor ===========================================================
 -- Local Variables:
