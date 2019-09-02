@@ -1,4 +1,4 @@
-Config { font = "-misc-fixed-*-*-*-*-20-*-*-*-*-*-*-*"
+Config { font = "xft:Fira Code Retina:size=10"
        , borderColor = "black"
        , border = TopB
        , bgColor = "#1c1c1c"
