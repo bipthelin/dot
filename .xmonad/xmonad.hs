@@ -4,7 +4,6 @@
 
 --_* Imports ==========================================================
 import           XMonad
-import           XMonad.Actions.Volume
 import           XMonad.Hooks.DynamicLog
 import           XMonad.Hooks.ManageDocks
 import           XMonad.Hooks.ManageHelpers (doCenterFloat, doFullFloat,
@@ -30,6 +29,7 @@ main = do
     , modMask            = mod4Mask     -- Rebind Mod to the Cmd key
     , normalBorderColor  = myNormalBorderColor
     , focusedBorderColor = myFocusedBorderColor
+    , terminal           = "alacritty"
     , borderWidth        = 2
     , handleEventHook    = mconcat
       [ docksEventHook
@@ -44,10 +44,6 @@ main = do
     , ((0, 0x1008ff03), spawn "xcalib -co 90 -a")
     , ((0, 0x1008ff05), spawn "kbdlight up")
     , ((0, 0x1008ff06), spawn "kbdlight down")
-    , ((0, 0x1008ff12), toggleMuteChannels
-        ["Master", "Headphone", "Speaker", "Bass Speaker"] >> return ())
-    , ((0, 0x1008ff13), raiseVolume 11 >> return ())
-    , ((0, 0x1008ff11), lowerVolume 11 >> return ())
     ]
 
 --_* Editor ===========================================================
