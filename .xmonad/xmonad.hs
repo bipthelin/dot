@@ -6,12 +6,13 @@
 import           XMonad
 import           XMonad.Hooks.DynamicLog
 import           XMonad.Hooks.ManageDocks
-import           XMonad.Hooks.ManageHelpers (doCenterFloat, doFullFloat,
-                                             isDialog, isFullscreen)
+import           XMonad.Hooks.ManageHelpers   (doCenterFloat, doFullFloat,
+                                               isDialog, isFullscreen)
 import           XMonad.Hooks.SetWMName
-import           XMonad.Util.EZConfig       (additionalKeys)
-import           XMonad.Util.Run            (spawnPipe)
+import           XMonad.Util.EZConfig         (additionalKeys, additionalKeysP)
+import           XMonad.Util.Run              (spawnPipe)
 
+import           Graphics.X11.ExtraTypes.XF86
 import           System.IO
 
 --_* Types ============================================================
@@ -38,12 +39,13 @@ main = do
       { ppOutput = hPutStrLn xmproc
       , ppTitle  = xmobarColor "green" "" . shorten 50
       }
-    } `additionalKeys`
-    [ ((mod4Mask .|. shiftMask, xK_z), spawn "slock")
-    , ((0, 0x1008ff02), spawn "xcalib -c")
-    , ((0, 0x1008ff03), spawn "xcalib -co 90 -a")
-    , ((0, 0x1008ff05), spawn "kbdlight up")
-    , ((0, 0x1008ff06), spawn "kbdlight down")
+    } `additionalKeysP`
+    [ ("M-S-z",                   spawn "slock")
+    , ("<XF86AudioRaiseVolume>",  spawn "pactl set-sink-volume @DEFAULT_SINK@ +1.5%")
+    , ("<XF86AudioLowerVolume>",  spawn "pactl set-sink-volume @DEFAULT_SINK@  -1.5%")
+    , ("<XF86AudioMute>",         spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
+    , ("<XF86MonBrightnessUp>",   spawn "lux -a 5%")
+    , ("<XF86MonBrightnessDown>", spawn "lux -s 5%")
     ]
 
 --_* Editor ===========================================================
