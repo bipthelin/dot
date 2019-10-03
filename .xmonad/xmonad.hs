@@ -30,7 +30,7 @@ main = do
     , modMask            = mod4Mask     -- Rebind Mod to the Cmd key
     , normalBorderColor  = myNormalBorderColor
     , focusedBorderColor = myFocusedBorderColor
-    , terminal           = "alacritty"
+    , terminal           = "kitty"
     , borderWidth        = 2
     , handleEventHook    = mconcat
       [ docksEventHook
