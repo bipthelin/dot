@@ -6,9 +6,9 @@ export ZSH=$HOME/.oh-my-zsh
 ulimit -f unlimited
 ulimit -u 2048
 
-ZSH_THEME="minimal"
+ZSH_THEME="dense"
 DISABLE_LS_COLORS="true"
-plugins=(git autojump history-substring-search pass)
+plugins=(git history-substring-search pass)
 
 export GOPATH="$HOME/Documents/goroot"
 export PATH="/usr/local/go/bin:$HOME/.cabal/bin:$HOME/.bin:$HOME/.bin/elixir/bin:$HOME/.cache/rebar3/bin:$PATH"

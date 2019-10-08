@@ -15,7 +15,7 @@ hi          Comment cterm=italic
 set         hlsearch
 set         list listchars=tab:▸\
 highlight   SpecialKey ctermfg=red
-set         colorcolumn=80
+set         colorcolumn=100
 highlight   ColorColumn ctermbg=8
 
 """_ * Primitives ------------------------------------------------------
@@ -32,6 +32,7 @@ set autoindent
 
 set backspace=indent,eol,start
 set laststatus=2
+set ruler
 set number
 set showcmd
 set noswapfile
@@ -42,6 +43,15 @@ set nowb
 set wildignore+=*.beam,*.dump,*~,*.o,.git,*.png,*.jpg,*.gif,.DS_Store,.eunit,deps,rel
 
 let g:airline_powerline_fonts = 1
+
+" Syntastic Configuration
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
 
 """_ * Mappings --------------------------------------------------------
 let mapleader=" "
@@ -67,6 +77,8 @@ imap <Left>  <nop>
 imap <Right> <nop>
 inore jj     <Esc>
 
+map <C-m> :TagbarToggle<CR>
+
 " tripple escape closes buffer
 map  <esc><esc><esc> :bd<cr>
 imap <esc><esc><esc> :bd<cr>
@@ -75,10 +87,10 @@ nnoremap <silent> n n:call HLNext(0.4)<cr>
 nnoremap <silent> N N:call HLNext(0.4)<cr>
 
 """_* File mappings ====================================================
-au BufNewFile,BufRead *.hs  setlocal ts=2 sw=2 sts=2
-au BufNewFile,BufRead *.erl setlocal ts=4 sw=4 sts=4
-au BufNewFile,BufRead *.hrl setlocal ts=4 sw=4 sts=4
-au BufNewFile,BufRead *.md  setlocal noet ts=4 sw=4
+"au BufNewFile,BufRead *.hs  setlocal ts=2 sw=2 sts=2
+"au BufNewFile,BufRead *.erl setlocal ts=4 sw=4 sts=4
+"au BufNewFile,BufRead *.hrl setlocal ts=4 sw=4 sts=4
+"au BufNewFile,BufRead *.md  setlocal noet ts=4 sw=4
 
 """_* Functions ========================================================
 "let c='a'
@@ -136,53 +148,5 @@ function! HLNext (blinktime)
     set invcursorline
     redraw
 endfunction
-
-" ale {
-    let g:ale_set_highlights = 0
-    " If emoji not loaded, use default sign
-    try
-        let g:ale_sign_error = emoji#for('boom')
-        let g:ale_sign_warning = emoji#for('small_orange_diamond')
-    catch
-        " Use same sign and distinguish error and warning via different colors.
-        let g:ale_sign_error = '•'
-        let g:ale_sign_warning = '•'
-    endtry
-    let g:ale_echo_msg_format = '[#%linter%#] %s [%severity%]'
-    let g:ale_statusline_format = ['E•%d', 'W•%d', 'OK']
-
-    " For a more fancy ale statusline
-    function! ALEGetError()
-        let l:res = ale#statusline#Status()
-        if l:res ==# 'OK'
-            return ''
-        else
-            let l:e_w = split(l:res)
-            if len(l:e_w) == 2 || match(l:e_w, 'E') > -1
-                return ' •' . matchstr(l:e_w[0], '\d\+') .' '
-            endif
-        endif
-    endfunction
-
-    function! ALEGetWarning()
-        let l:res = ale#statusline#Status()
-        if l:res ==# 'OK'
-            return ''
-        else
-            let l:e_w = split(l:res)
-            if len(l:e_w) == 2
-                return ' •' . matchstr(l:e_w[1], '\d\+')
-            elseif match(l:e_w, 'W') > -1
-                return ' •' . matchstr(l:e_w[0], '\d\+')
-            endif
-        endif
-    endfunction
-
-    let g:ale_echo_msg_error_str = '✹ Error'
-    let g:ale_echo_msg_warning_str = '⚠ Warning'
-
-    nmap <Leader>en <Plug>(ale_next)
-    nmap <Leader>ep <Plug>(ale_previous)
-" }
 
 """ eof
