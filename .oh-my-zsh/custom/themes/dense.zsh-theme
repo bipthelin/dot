@@ -39,4 +39,4 @@ prompt_git() {
   fi
 }
 
-PROMPT='%2~ $(prompt_git)λ%b ›'
+PROMPT='%2~ $(prompt_git)λ%b › '
