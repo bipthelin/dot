@@ -16,7 +16,6 @@ export ANSIBLE_CONFIG=/home/bip/Documents/Code/infrastructure_ng/se/ansible.cfg
 export GPG_TTY=$(tty)
 source $ZSH/oh-my-zsh.sh
 source $HOME/.bin/erlang/21.3/activate
-source $HOME/.cargo/env
 
 # history-substring-search options
 export HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=bold
