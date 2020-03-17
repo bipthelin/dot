@@ -33,5 +33,6 @@ setopt extendedglob
 
 ###_* Aliases ==========================================================
 alias gs="git status -s"
+alias xclip="xclip -selection c"
 
 ### eof
