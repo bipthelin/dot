@@ -5,6 +5,7 @@
 --_* Imports ==========================================================
 import           XMonad
 import           XMonad.Hooks.DynamicLog
+import           XMonad.Hooks.EwmhDesktops
 import           XMonad.Hooks.ManageDocks
 import           XMonad.Hooks.ManageHelpers   (doCenterFloat, doFullFloat,
                                                isDialog, isFullscreen)
@@ -34,6 +35,7 @@ main = do
     , borderWidth        = 2
     , handleEventHook    = mconcat
       [ docksEventHook
+      , fullscreenEventHook
       , handleEventHook def ]
     , logHook            = dynamicLogWithPP xmobarPP
       { ppOutput = hPutStrLn xmproc
