@@ -8,7 +8,7 @@ ulimit -u 2048
 
 ZSH_THEME="dense"
 DISABLE_LS_COLORS="true"
-plugins=(git history-substring-search pass)
+plugins=(fzf-tab git history-substring-search pass)
 
 export GOPATH="$HOME/Documents/goroot"
 export PATH="/usr/local/go/bin:$HOME/.cabal/bin:$HOME/.bin:$HOME/.bin/elixir/bin:$HOME/.cache/rebar3/bin:$PATH"
