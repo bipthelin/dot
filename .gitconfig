@@ -1,0 +1,16 @@
+[user]
+  email = bip@kivra.com
+  name = Bip Thelin
+  signingkey = 0x65C323A142C7590A
+[push]
+  default = simple
+[commit]
+  gpgsign = true
+[gpg]
+	program = gpg
+[core]
+	editor = nvim
+[pull]
+	rebase = true
+[url "git@github.com:/kivra"]
+	insteadOf = https://github.com/kivra
