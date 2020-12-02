@@ -12,7 +12,7 @@ plugins=(git history-substring-search pass)
 
 export GOPATH="$HOME/Documents/goroot"
 export GOPRIVATE=github.com/kivra
-export PATH="/usr/local/go/bin:$HOME/.cabal/bin:$HOME/.bin:$HOME/.bin/elixir/bin:$HOME/.cache/rebar3/bin:$PATH"
+export PATH="/usr/local/go/bin:$HOME/.cabal/bin:$HOME/.bin:$HOME/.bin/elixir/bin:$HOME/.cache/rebar3/bin:$HOME/.npm-global/bin:$PATH"
 export ANSIBLE_CONFIG=/home/bip/Documents/Code/infrastructure_ng/se/ansible.cfg
 export GPG_TTY=$(tty)
 source $ZSH/oh-my-zsh.sh
