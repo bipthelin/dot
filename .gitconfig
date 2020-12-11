@@ -7,10 +7,13 @@
 [commit]
   gpgsign = true
 [gpg]
-	program = gpg
+  program = gpg
 [core]
-	editor = nvim
+  editor = nvim
 [pull]
-	rebase = true
+  rebase = true
 [url "git@github.com:/kivra"]
-	insteadOf = https://github.com/kivra
+  insteadOf = https://github.com/kivra
+[alias]
+  wip = for-each-ref --sort='authordate:iso8601' --format=' %(color:green)%(authordate:relative)%09%(color:white)%(refname:short)' refs/heads
+
