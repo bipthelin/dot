@@ -96,7 +96,7 @@ let g:ale_linters = {
 \}
 
 let g:ale_fixers = {
-\   'python': ['yapf'],
+\   'python': ['black'],
 \}
 
 let g:ale_fix_on_save = 1
@@ -148,6 +148,19 @@ function! HLNext (blinktime)
     exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
     set invcursorline
     redraw
+endfunction
+
+" Toggle ALE quick list
+noremap <Leader>l :call QFixToggle()<CR>
+
+function! QFixToggle()
+  if exists("g:qfix_win")
+    lclose
+    unlet g:qfix_win
+  else
+    lopen
+    let g:qfix_win = bufnr("$")
+  endif
 endfunction
 
 """ eof
