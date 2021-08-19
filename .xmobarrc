@@ -12,11 +12,11 @@ Config { font = "xft:Fira Code Retina:size=10"
                     , Run DiskU [("/", "/ <usedp>% |"), ("/home", "/home <usedp>%")]
                                 ["-L", "20", "-H", "50", "-m", "1", "-p", "3"]
                                 20
-                    , Run Battery ["-t","<timeleft>","-L","50","-H","75","-h","green","-n","yell","-l","red"] 10
+                    , Run Battery ["-t", "<acstatus>: <left>% - <timeleft>", "--", "-O", "AC", "-o", "Bat", "-h", "green", "-l", "red"] 10
                     , Run StdinReader
                     , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ <fc=#ee9a00>%cpu%</fc> | <fc=#ee9a00>%disku%</fc>  | <fc=#ee9a00>%memory%</fc>  | <fc=#ee9a00>BAT: %battery%</fc>  | <fc=#ee9a00>%dynnetwork%</fc>  | <fc=#ee9a00>%vol%</fc> | <fc=#ee9a00>%date%</fc>"
+       , template = "%StdinReader% }{ <fc=#ee9a00>%cpu%</fc> | <fc=#ee9a00>%disku%</fc>  | <fc=#ee9a00>%memory%</fc>  | <fc=#ee9a00>%battery%</fc>  | <fc=#ee9a00>%dynnetwork%</fc>  | <fc=#ee9a00>%vol%</fc> | <fc=#ee9a00>%date%</fc>"
        }
