@@ -2,13 +2,17 @@ sort=-time
 markup=1
 actions=1
 layer=overlay
+default-timeout=5000
 
 # Format
 font=Noto Sans 12
 border-color=#002028
-border-size=2
-border-radius=15
+border-size=3
+border-radius=16
+width=450
+padding=20
 background-color=#002b36AA
+progress-color=#444444
 text-color=#fdf6e3
 format=<b>%s</b> <span color="#93a1a1">(%a)</span>\n%b
 
@@ -35,4 +39,4 @@ border-color=#9c2220
 border-color=#6c71c4
 
 [app-name=Slack]
-format=Slack: %s
+format=<b>Slack:</b> %s
