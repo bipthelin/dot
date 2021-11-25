@@ -11,10 +11,9 @@ DISABLE_LS_COLORS="true"
 plugins=(git history-substring-search pass)
 
 export GOPATH="$HOME/Documents/goroot"
-export GOPRIVATE=github.com/kivra
 export PATH="/usr/local/go/bin:$HOME/.cabal/bin:$HOME/.bin:$HOME/.bin/elixir/bin:$HOME/.cache/rebar3/bin:$HOME/.npm-global/bin:$HOME/.local/bin:$PATH"
-export ANSIBLE_CONFIG=/home/bip/Documents/Code/infrastructure_ng/se/ansible.cfg
 export GPG_TTY=$(tty)
+export XDG_CURRENT_DESKTOP=sway
 source $ZSH/oh-my-zsh.sh
 source $HOME/.bin/erlang/22.3/activate
 
@@ -34,6 +33,5 @@ setopt extendedglob
 
 ###_* Aliases ==========================================================
 alias gs="git status -s"
-alias xclip="xclip -selection c"
 
 ### eof
