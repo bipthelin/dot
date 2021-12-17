@@ -33,5 +33,6 @@ setopt extendedglob
 
 ###_* Aliases ==========================================================
 alias gs="git status -s"
+alias cat="bat"
 
 ### eof
