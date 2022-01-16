@@ -30,6 +30,7 @@ bar {
 }
 
 default_border pixel 2
+xwayland disable
 
 exec swayidle -w \
          timeout 300 'swaylock -f -c 000000' \
