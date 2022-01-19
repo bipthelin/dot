@@ -15,7 +15,7 @@ hi          Comment cterm=italic
 set         hlsearch
 set         list listchars=tab:▸\
 highlight   SpecialKey ctermfg=red
-set         colorcolumn=80
+set         colorcolumn=100
 highlight   ColorColumn ctermbg=8
 
 """_ * Primitives ------------------------------------------------------
