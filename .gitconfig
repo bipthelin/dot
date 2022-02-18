@@ -2,6 +2,19 @@
   email = bip.thelin@gmail.com
   name = Bip Thelin
   signingkey = 0x65C323A142C7590A
+[core]
+  pager = delta
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  hyperlinks = true
+  navigate = true
+  side-by-side = true
+[merge]
+  conflictstyle = diff3
+[diff]
+  algorithm = patience
+  colorMoved = default
 [push]
   default = simple
 [commit]
@@ -14,4 +27,3 @@
   rebase = true
 [alias]
   wip = for-each-ref --sort='authordate:iso8601' --format=' %(color:green)%(authordate:relative)%09%(color:white)%(refname:short)' refs/heads
-
